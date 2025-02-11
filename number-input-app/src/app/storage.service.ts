@@ -1,7 +1,5 @@
-// storage.service.ts
 import { Injectable } from '@angular/core';
 
-// Определяем интерфейсы для типизации
 interface ElectronWindow extends Window {
   process?: {
     type?: string;
@@ -22,13 +20,10 @@ export class StorageService {
 
   saveNumber(number: number): void {
     if (this.isElectron()) {
-      // Electron storage
       window.localStorage.setItem(this.STORAGE_KEY, number.toString());
     } else if (this.isIonic()) {
-      // Ionic storage
       window.localStorage.setItem(this.STORAGE_KEY, number.toString());
     } else {
-      // Web storage (cookies)
       document.cookie = `${this.STORAGE_KEY}=${number};path=/;max-age=31536000`;
     }
   }
