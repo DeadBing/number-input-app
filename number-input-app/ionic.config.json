@@ -1,0 +1,7 @@
+{
+  "name": "number-input-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
